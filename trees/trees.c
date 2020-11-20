@@ -11,8 +11,8 @@ struct Tree {
 	char value;
 	struct Tree* left;
 	struct Tree* rigth;
-} typedef Tree;
-
+};
+  typedef struct Tree Tree;
 
 size_t maxx(size_t value0, size_t value1) {
 	if (value0 > value1)
@@ -53,9 +53,9 @@ struct Tree* tree_find(struct Tree* root, int data) {
 		return root;
 	
 	if (root->value > data) 
-		tree_find(root->left, data);
+		return tree_find(root->left, data);
 	else
-		tree_find(root->rigth, data);
+		return tree_find(root->rigth, data);
 }
 
 
